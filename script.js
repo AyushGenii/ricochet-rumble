@@ -1,12 +1,13 @@
-function toggleMobileMenu() {
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
-  const navRight = document.querySelector(".nav-right");
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+const navBottom = document.getElementById("nav-bottom");
 
-  hamburgerMenu.addEventListener("click", function() {
-    navRight.classList.toggle("show");
-    hamburgerMenu.classList.toggle("active");
-  });
-}
+hamburgerMenu.addEventListener("click", function () {
+  navBottom.classList.toggle("active");
+});
+
+hamburgerMenu.addEventListener("touchstart", function () {
+  navBottom.classList.toggle("active");
+});
 
 function aboutAnimination() {
   var aboutRightListAll = document.querySelectorAll(".about-right-list");
@@ -42,7 +43,7 @@ function aboutAnimination() {
 function rulesVideo() {
   var rulesCenter = document.querySelector("#rules-video-center");
   var video = document.querySelector("#rules video");
-  
+
   function playVideo() {
     video.play();
     gsap.to(video, {
@@ -51,7 +52,7 @@ function rulesVideo() {
       borderRadius: 0,
     });
   }
-  
+
   function pauseVideo() {
     video.pause();
     gsap.to(video, {
@@ -67,6 +68,5 @@ function rulesVideo() {
   video.addEventListener("touchstart", pauseVideo);
 }
 
-toggleMobileMenu();
 aboutAnimination();
 rulesVideo();
