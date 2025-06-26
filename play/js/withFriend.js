@@ -85,7 +85,7 @@ function createBoard(boardConfig) {
   }
 
 function handlePieceClick(event) {
-  const piece = event.target.closest(".piece");
+  const piece = event.target.closest(".piece");// here svg is the clicked ele and div above it whose class is piece red/blue is the parent...
   const square = piece.parentElement;
   const squareId = parseInt(square.getAttribute("square-id"));
 
